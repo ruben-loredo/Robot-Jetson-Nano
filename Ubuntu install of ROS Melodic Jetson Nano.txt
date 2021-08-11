@@ -1,0 +1,19 @@
+Ubuntu install of ROS Melodic
+http:wiki.ros.org/melodic/Installation/Ubuntu//
+
+Configure su computadora para aceptar software de packages.ros.org.
+sudo sh -c 'echo "deb http:packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'//
+
+Configura tus llaves
+sudo apt install curl # if you haven't already installed curl
+curl -s https:raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -//
+
+Primero, asegúrese de que el índice de su paquete Debian esté actualizado:
+sudo apt update
+
+Instalación de escritorio: ROS, rqt , rviz y bibliotecas genéricas de robots
+sudo apt install ros-melodic-desktop
+
+Es conveniente si las variables de entorno ROS se agregan automáticamente a su sesión de bash cada vez que se lanza un nuevo shell:
+echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
+source ~/.bashrc
